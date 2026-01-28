@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string username, password;
+    int role, active;
+
+    cout << "Username: ";
+    cin >> username;
+    cout << "Password: ";
+    cin >> password;
+
+    // ADMIN
+    if (username == "admin" && password == "123") {
+        role = 0;
+        active = 1;
+    }
+    // STUDENT
+    else if (username == "le" && password == "123") {
+        role = 1;
+        active = 1;
+    }
+    else {
+        cout << "Sai tai khoan hoac mat khau!\n";
+        return 0;
+    }
+
+    if (active != 1) {
+        cout << "Tai khoan bi khoa!\n";
+        return 0;
+    }
+
+    if (role == 0) {
+        cout << "Dang nhap ADMIN thanh cong\n";
+    }
+    else if (role == 1) {
+        cout << "Dang nhap SINH VIEN thanh cong\n";
+    }
+
+    return 0;
+}
